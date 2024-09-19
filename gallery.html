@@ -8,6 +8,14 @@
     <title>Photo Gallery</title>
 </head>
 <body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="pets.html">Available Pets</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
 
     <h1>Photo Gallery</h1>
     <p>Welcome to the photo gallery!</p>
@@ -15,8 +23,32 @@
     <!-- Gallery Container -->
     <ul id="photo-gallery" class="photo-gallery"></ul>
 
-    <h4>Go to <a href="index.html">Home</a> | <a href="contact.html">Contact Us</a></h4>
 
-    <script src="gallery.js"></script>
+    <script>
+        const images = [
+            'images/pet1.jpg',
+            'images/pet1.jpg',
+            'images/pet1.jpg',
+            'images/pet1.jpg',
+            'images/pet1.jpg',
+        ];
+
+        // Get the photo gallery container
+        const galleryContainer = document.getElementById('photo-gallery');
+
+        // Loop through the images array and create list items for each photo
+        images.forEach(imageSrc => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('photo');
+            
+            const imgElement = document.createElement('img');
+            imgElement.src = imageSrc;
+            imgElement.alt = 'Gallery photo';
+            
+            listItem.appendChild(imgElement);
+            galleryContainer.appendChild(listItem);
+        });
+
+    </script>
 </body>
 </html>
