@@ -21,16 +21,44 @@
 
     <form action="/submit" method="POST">
         <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name" name="name" required><br><br>
 
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+        <label for="inquiryType">Select the type of inquiry:</label><br>
+        <select id="inquiryType" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="adoption">Adoption Inquiry</option>
+            <option value="volunteering">Volunteering</option>
+            <option value="donation">Donation</option>
+            <option value="general">General Inquiry</option>
+        </select><br><br>
+
+        <div id="inputContainer">
+            <div id="adoption" class="hidden">
+                <label for="petName">Pet Name:</label>
+                <input type="text" id="petName" name="petName" placeholder="Name of the pet you're interested in"><br><br>
+            </div>
+            <div id="volunteering" class="hidden">
+                <label for="availability">Availability:</label>
+                <input type="text" id="availability" name="availability" placeholder="When can you volunteer?"><br><br>
+            </div>
+            <div id="donation" class="hidden">
+                <label for="donationType">Type of Donation:</label>
+                <input type="text" id="donationType" name="donationType" placeholder="Monetary, Supplies, etc."><br><br>
+                <label for="donationMessage">Message:</label>
+                <textarea id="donationMessage" name="donationMessage" rows="4" cols="50" placeholder="Any additional information about your donation?"></textarea><br><br>
+            </div>
+            <div id="general" class="hidden">
+                <label for="generalMessage">Your Message:</label>
+                <textarea id="generalMessage" name="generalMessage" rows="4" cols="50" placeholder="Please describe your inquiry..."></textarea><br><br>
+            </div>
+        </div>
 
         <input type="submit" value="Submit">
     </form>
 
+    <script src="js/contact.js"></script>
 </body>
 </html>
