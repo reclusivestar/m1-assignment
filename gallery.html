@@ -22,41 +22,13 @@
     <!-- Gallery Container -->
     <ul id="photo-gallery" class="photo-gallery"></ul>
 
-    <script>
-        const images = [
-            { src: 'images/pet1.jpg', caption: 'Happy Dog' },
-            { src: 'images/pet2.jpg', caption: 'Fluffy Cat' },
-            { src: 'images/pet3.jpg', caption: 'Playful Dog' },
-            { src: 'images/pet4.jpg', caption: 'Curious Dog' },
-            { src: 'images/pet5.jpg', caption: 'Friendly Dog' },
-            { src: 'images/pet6.jpg', caption: 'Loyal Dog' },
-            { src: 'images/pet7.jpg', caption: 'Adventurous Dog' },
-            { src: 'images/pet8.jpg', caption: 'Sleepy Cat' },
-            { src: 'images/pet9.jpg', caption: 'Energetic Cat' },
-            { src: 'images/pet10.jpg', caption: 'Playful Cat' },
-        ];
+    <!-- Info Box (Initially Hidden) -->
+    <div id="info-box" class="info-box">
+        <h2 id="info-heading"></h2>
+        <p id="info-text"></p>
+        <a href="#" id="close-info-box">Close</a>
+    </div>
 
-        // Get the photo gallery container
-        const galleryContainer = document.getElementById('photo-gallery');
-
-        // Loop through the images array and create list items for each photo with a caption
-        images.forEach(image => {
-            const listItem = document.createElement('li');
-            listItem.classList.add('photo');
-
-            const imgElement = document.createElement('img');
-            imgElement.src = image.src;
-            imgElement.alt = 'Gallery photo';
-
-            const captionElement = document.createElement('p');
-            captionElement.classList.add('caption');
-            captionElement.innerText = image.caption;
-
-            listItem.appendChild(imgElement);
-            listItem.appendChild(captionElement);
-            galleryContainer.appendChild(listItem);
-        });
-
-    </script>
+    <script src="js/gallery.js"></script>
 </body>
 </html>
