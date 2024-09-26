@@ -1,4 +1,3 @@
-<!-- gallery.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,34 +22,38 @@
     <!-- Gallery Container -->
     <ul id="photo-gallery" class="photo-gallery"></ul>
 
-
     <script>
         const images = [
-            'images/pet1.jpg',
-            'images/pet2.jpg',
-            'images/pet3.jpg',
-            'images/pet4.jpg',
-            'images/pet5.jpg',
-            'images/pet6.jpg',
-            'images/pet7.jpg',
-            'images/pet8.jpg',
-            'images/pet9.jpg',
-            'images/pet10.jpg',
+            { src: 'images/pet1.jpg', caption: 'Happy Dog' },
+            { src: 'images/pet2.jpg', caption: 'Fluffy Cat' },
+            { src: 'images/pet3.jpg', caption: 'Playful Dog' },
+            { src: 'images/pet4.jpg', caption: 'Curious Dog' },
+            { src: 'images/pet5.jpg', caption: 'Friendly Dog' },
+            { src: 'images/pet6.jpg', caption: 'Loyal Dog' },
+            { src: 'images/pet7.jpg', caption: 'Adventurous Dog' },
+            { src: 'images/pet8.jpg', caption: 'Sleepy Cat' },
+            { src: 'images/pet9.jpg', caption: 'Energetic Cat' },
+            { src: 'images/pet10.jpg', caption: 'Playful Cat' },
         ];
 
         // Get the photo gallery container
         const galleryContainer = document.getElementById('photo-gallery');
 
-        // Loop through the images array and create list items for each photo
-        images.forEach(imageSrc => {
+        // Loop through the images array and create list items for each photo with a caption
+        images.forEach(image => {
             const listItem = document.createElement('li');
             listItem.classList.add('photo');
-            
+
             const imgElement = document.createElement('img');
-            imgElement.src = imageSrc;
+            imgElement.src = image.src;
             imgElement.alt = 'Gallery photo';
-            
+
+            const captionElement = document.createElement('p');
+            captionElement.classList.add('caption');
+            captionElement.innerText = image.caption;
+
             listItem.appendChild(imgElement);
+            listItem.appendChild(captionElement);
             galleryContainer.appendChild(listItem);
         });
 
