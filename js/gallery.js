@@ -1,4 +1,3 @@
-
 // Get references to the info box and its elements
 const infoBox = document.getElementById('info-box');
 const infoHeading = document.getElementById('info-heading');
@@ -62,3 +61,17 @@ images.forEach((image, index) => {
     listItem.appendChild(descriptionElement);
     galleryContainer.appendChild(listItem);
 });
+
+
+$(document).ready(function () {
+    $('.photo img').click(function () {
+        const imgSrc = $(this).attr('src');
+        $('#lightbox-img').attr('src', imgSrc); 
+        $('#lightbox').removeClass('hidden').addClass('visible');
+    });
+
+    $('#lightbox-close, #overlay').click(function () {
+        $('#lightbox').removeClass('visible').addClass('hidden');
+    });
+});
+
